@@ -180,3 +180,7 @@ Copyright © 2026 **上海如静知华信息科技有限公司**。
 ## 维护窗口决策
 
 新增 `POST /api/eam/insights/maintenance-window`，比较故障风险敞口与计划停产损失，并校验停机窗口、备件和技术人员准备度，输出 `EXECUTE / PREPARE / DEFER`。设备管理团队可在生产损失、资产关键度和维护资源之间形成可审计的排程依据。
+
+## 备件补货建议
+
+新增 `POST /api/eam/insights/spare-part-replenishment`，根据月均消耗、采购提前期、设备关键度、库存、在途、预留和最小订购量计算再订货点、覆盖天数及建议补货量，返回 `ORDER_NOW / WATCH / ADEQUATE`。关键备件缺货会优先触发采购和替代料核验。
