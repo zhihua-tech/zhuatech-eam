@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.eam.service;
 import cn.zhuatech.eam.common.BusinessException; import cn.zhuatech.eam.dto.EamDto.*; import cn.zhuatech.eam.model.*; import cn.zhuatech.eam.repository.*; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional; import java.time.*; import java.time.format.DateTimeFormatter; import java.util.List;
 @Service @Transactional(readOnly=true) public class EamService {

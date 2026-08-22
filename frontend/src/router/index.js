@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 import {createRouter,createWebHistory} from 'vue-router';
 import LoginView from '../views/LoginView.vue';
 import AssetDashboard from '../views/admin/AssetDashboard.vue';

@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {workOrders} from '../../api/mock';</script>
 <template><AdminShell><template #title>维修工单</template><div class="heading"><div><p>MAINTENANCE EXECUTION</p><h1>维修工单中心</h1><span>从故障报修、派工执行到验收归档的全过程闭环</span></div><button class="btn primary">＋ 创建维修工单</button></div>
  <section class="work-flow"><div><small>01</small><span>待接单</span><b>8</b><i>→</i></div><div><small>02</small><span>处理中</span><b>17</b><i>→</i></div><div><small>03</small><span>待验收</span><b>12</b><i>→</i></div><div><small>04</small><span>今日完成</span><b>26</b></div><aside><span>平均修复时长 MTTR</span><b>3.6 h</b><small>较上月缩短 0.4 h</small></aside></section>

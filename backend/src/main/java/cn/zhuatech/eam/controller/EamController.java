@@ -1,4 +1,4 @@
-/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. */
+/* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.eam.controller;
 import cn.zhuatech.eam.common.ApiResponse; import cn.zhuatech.eam.dto.EamDto.*; import cn.zhuatech.eam.service.EamService; import jakarta.validation.Valid; import org.springframework.security.access.prepost.PreAuthorize; import org.springframework.web.bind.annotation.*; import java.util.List;
 @RestController @RequestMapping("/api/eam") public class EamController {

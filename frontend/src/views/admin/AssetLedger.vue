@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {assets,spareParts} from '../../api/mock';</script>
 <template><AdminShell><template #title>资产台账</template><div class="heading"><div><p>ASSET MASTER DATA</p><h1>资产台账</h1><span>统一管理设备档案、位置、责任人、价值与全生命周期履历</span></div><div><button class="btn ghost">导入台账</button><button class="btn primary">＋ 新建资产</button></div></div>
  <section class="asset-summary"><div><small>资产分类</small><b>生产设备 / 动力设备 / 物流设备</b></div><div><small>当前组织</small><b>知华智造一号工厂</b></div><div><small>本月新增</small><b>18 台 / 套</b></div><div><small>盘点进度</small><b>82.6%</b></div></section>

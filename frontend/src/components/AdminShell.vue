@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>
 const groups=[
  {label:'资产运营',items:[['/admin/dashboard','资产驾驶舱','⌂'],['/admin/assets','资产台账','▱'],['/admin/analytics','运行分析','⌁']]},

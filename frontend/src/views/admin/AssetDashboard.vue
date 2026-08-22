@@ -1,4 +1,4 @@
-<!-- Copyright 2026 上海如静知华信息科技有限公司 -->
+<!-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ -->
 <script setup>import AdminShell from '../../components/AdminShell.vue';import StatusBadge from '../../components/StatusBadge.vue';import {assets,workOrders,plans} from '../../api/mock';</script>
 <template><AdminShell><template #title>资产驾驶舱</template>
  <div class="heading"><div><p>ASSET OPERATIONS OVERVIEW</p><h1>资产运营驾驶舱</h1><span>聚合设备健康、维护负荷与运行成本，聚焦今日需要处理的事项</span></div><div><button class="btn ghost">下载晨会简报</button><button class="btn primary">＋ 新增资产</button></div></div>

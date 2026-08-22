@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const assets=[
  {code:'AST-CNC-018',name:'五轴加工中心',category:'生产设备',location:'一号工厂 · 精加工区',custodian:'许亦',health:'健康',status:'运行中',utilization:87,value:'286.0 万'},
  {code:'AST-AHU-006',name:'组合式空调机组',category:'动力设备',location:'一号工厂 · 屋顶机房',custodian:'陈序',health:'需关注',status:'运行中',utilization:93,value:'48.0 万'},

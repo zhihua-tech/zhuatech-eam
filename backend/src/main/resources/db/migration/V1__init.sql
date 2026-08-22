@@ -1,4 +1,4 @@
--- Copyright 2026 上海如静知华信息科技有限公司
+-- Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/
 CREATE TABLE sys_user (id BIGINT PRIMARY KEY AUTO_INCREMENT,username VARCHAR(40) NOT NULL UNIQUE,password VARCHAR(100) NOT NULL,display_name VARCHAR(40) NOT NULL,role VARCHAR(20) NOT NULL,enabled BOOLEAN NOT NULL,created_at DATETIME NOT NULL,updated_at DATETIME NOT NULL);
 CREATE TABLE eam_asset (id BIGINT PRIMARY KEY AUTO_INCREMENT,asset_code VARCHAR(32) NOT NULL UNIQUE,asset_name VARCHAR(100) NOT NULL,category VARCHAR(40) NOT NULL,location VARCHAR(80) NOT NULL,custodian VARCHAR(40) NOT NULL,original_value DECIMAL(14,2) NOT NULL,commissioned_on DATE NOT NULL,health_status VARCHAR(24) NOT NULL,operation_status VARCHAR(24) NOT NULL,created_at DATETIME NOT NULL,updated_at DATETIME NOT NULL);
 CREATE TABLE eam_spare_part (id BIGINT PRIMARY KEY AUTO_INCREMENT,part_code VARCHAR(32) NOT NULL UNIQUE,part_name VARCHAR(100) NOT NULL,specification VARCHAR(60) NOT NULL,unit VARCHAR(20) NOT NULL,stock_quantity INT NOT NULL,safety_stock INT NOT NULL,warehouse VARCHAR(40) NOT NULL,created_at DATETIME NOT NULL,updated_at DATETIME NOT NULL);
