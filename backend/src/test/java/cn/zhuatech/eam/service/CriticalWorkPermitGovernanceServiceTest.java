@@ -4,9 +4,15 @@ package cn.zhuatech.eam.service;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class CriticalWorkPermitGovernanceServiceTest {
     private final CriticalWorkPermitGovernanceService service = new CriticalWorkPermitGovernanceService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void releasesPreparedCriticalWork() {
         var result = service.assess(new CriticalWorkPermitGovernanceService.Request(
                 "WO-001", true, true, true, true, true, true, true, true, false));
@@ -14,6 +20,9 @@ class CriticalWorkPermitGovernanceServiceTest {
         assertThat(result.blockers()).isEmpty();
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void holdsUnsafeEmergencyWork() {
         var result = service.assess(new CriticalWorkPermitGovernanceService.Request(
                 "WO-002", true, false, false, false, false, false, false, false, true));

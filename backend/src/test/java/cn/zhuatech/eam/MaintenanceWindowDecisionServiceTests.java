@@ -8,9 +8,15 @@ import java.math.BigDecimal;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class MaintenanceWindowDecisionServiceTests {
     private final MaintenanceWindowDecisionService service = new MaintenanceWindowDecisionService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void executesReadyMaintenanceWhenFailureExposureIsHigher() {
         var result = service.evaluate(new MaintenanceWindowDecisionService.Request(
@@ -22,6 +28,9 @@ class MaintenanceWindowDecisionServiceTests {
         assertEquals("EXECUTE", result.decision());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void preparesResourcesBeforeCriticalMaintenance() {
         var result = service.evaluate(new MaintenanceWindowDecisionService.Request(

@@ -9,8 +9,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class AssetHealthService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         int score = Math.min(100, (int) Math.round(Math.min(20, request.temperatureDelta() * 2)
             + request.vibrationScore() * .35 + Math.min(30, request.failureCount90d() * 10)
@@ -24,9 +30,15 @@ public class AssetHealthService {
         return new Result(request.assetCode(), score, level, score >= 50, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String assetCode, @Min(0) double temperatureDelta,
                           @Min(0) @Max(100) int vibrationScore, @Min(0) int failureCount90d,
                           @Min(0) int daysSinceInspection, @Min(0) @Max(100) int criticality) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String assetCode, int riskScore, String level,
                          boolean workOrderRequired, List<String> actions) {}
 }

@@ -11,8 +11,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class SparePartReplenishmentService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(
         @DecimalMin("0.0") BigDecimal averageMonthlyConsumption,
         @Min(0) int leadTimeDays,
@@ -23,9 +29,15 @@ public class SparePartReplenishmentService {
         @DecimalMin("0.01") BigDecimal minimumOrderQuantity
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String status, BigDecimal inventoryPosition, BigDecimal reorderPoint,
                          BigDecimal suggestedOrderQuantity, int coverageDays, List<String> actions) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result recommend(Request request) {
         BigDecimal dailyUse = request.averageMonthlyConsumption().divide(BigDecimal.valueOf(30), 4, RoundingMode.HALF_UP);
         BigDecimal leadDemand = dailyUse.multiply(BigDecimal.valueOf(request.leadTimeDays()));
@@ -53,6 +65,9 @@ public class SparePartReplenishmentService {
         return new Result(status, position, reorderPoint, suggested, coverageDays, List.copyOf(actions));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     private BigDecimal roundToMultiple(BigDecimal value, BigDecimal multiple) {
         if (value.signum() == 0) return BigDecimal.ZERO.setScale(2);
         return value.divide(multiple, 0, RoundingMode.CEILING).multiply(multiple).setScale(2, RoundingMode.HALF_UP);

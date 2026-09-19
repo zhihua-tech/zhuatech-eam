@@ -1,7 +1,13 @@
 /* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.eam.config;
 import cn.zhuatech.eam.model.*; import cn.zhuatech.eam.repository.*; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*; import org.springframework.security.crypto.password.PasswordEncoder; import java.math.BigDecimal; import java.time.*;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration public class DataInitializer {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Bean CommandLineRunner seed(UserRepository users,AssetRepository assets,SparePartRepository parts,MaintenancePlanRepository plans,WorkOrderRepository orders,InspectionRecordRepository inspections,PasswordEncoder encoder){return args->{if(users.count()>0)return;
         users.save(new UserAccount("admin",encoder.encode("admin123"),"资产平台主管",UserAccount.Role.ADMIN)); users.save(new UserAccount("asset",encoder.encode("asset123"),"资产管理员",UserAccount.Role.ASSET_MANAGER)); users.save(new UserAccount("technician",encoder.encode("tech123"),"维修技师",UserAccount.Role.TECHNICIAN));
         assets.save(new Asset("AST-CNC-018","五轴加工中心","生产设备","一号工厂·精加工区","许亦",new BigDecimal("2860000"),LocalDate.of(2022,4,18),"健康","运行中")); assets.save(new Asset("AST-AHU-006","组合式空调机组","动力设备","一号工厂·屋顶机房","陈序",new BigDecimal("480000"),LocalDate.of(2021,9,8),"需关注","运行中")); assets.save(new Asset("AST-CMP-012","变频螺杆空压机","动力设备","公用工程站","梁川",new BigDecimal("635000"),LocalDate.of(2023,2,14),"健康","运行中")); assets.save(new Asset("AST-AGV-027","潜伏式搬运机器人","物流设备","成品仓·A 区","周岚",new BigDecimal("168000"),LocalDate.of(2024,6,20),"需关注","停机检修"));

@@ -9,12 +9,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/enterprise/eam")
 public class CriticalWorkPermitGovernanceController {
     private final CriticalWorkPermitGovernanceService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public CriticalWorkPermitGovernanceController(CriticalWorkPermitGovernanceService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/critical-work-permit")
     public ApiResponse<CriticalWorkPermitGovernanceService.Assessment> assess(
             @Valid @RequestBody CriticalWorkPermitGovernanceService.Request request) {

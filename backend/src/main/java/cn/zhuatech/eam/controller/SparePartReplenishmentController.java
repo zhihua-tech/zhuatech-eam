@@ -6,12 +6,21 @@ import cn.zhuatech.eam.service.SparePartReplenishmentService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/eam/insights")
 public class SparePartReplenishmentController {
     private final SparePartReplenishmentService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public SparePartReplenishmentController(SparePartReplenishmentService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/spare-part-replenishment")
     public ApiResponse<SparePartReplenishmentService.Result> recommend(
         @Valid @RequestBody SparePartReplenishmentService.Request request) {

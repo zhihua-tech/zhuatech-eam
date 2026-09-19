@@ -13,8 +13,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class MaintenanceWindowDecisionService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result evaluate(Request request) {
         BigDecimal failureExposure = request.expectedFailureLoss()
             .multiply(request.failureProbability()).setScale(2, RoundingMode.HALF_UP);
@@ -37,6 +43,9 @@ public class MaintenanceWindowDecisionService {
             windowFits, decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String assetCode, @Min(1) @Max(5) int criticality,
                           @DecimalMin("0") @DecimalMax("1") BigDecimal failureProbability,
                           @Min(1) int plannedDowntimeHours, @Min(0) int availableWindowHours,
@@ -44,6 +53,9 @@ public class MaintenanceWindowDecisionService {
                           @DecimalMin("0") BigDecimal productionLossPerHour,
                           @DecimalMin("0") BigDecimal expectedFailureLoss) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String assetCode, BigDecimal failureExposure,
                          BigDecimal plannedInterruptionLoss, boolean windowFits,
                          String decision, List<String> actions) {}

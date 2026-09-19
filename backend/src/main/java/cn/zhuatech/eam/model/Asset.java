@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name = "eam_asset")
 public class Asset extends BaseEntity {
@@ -18,8 +21,14 @@ public class Asset extends BaseEntity {
     @Column(nullable = false, length = 24) private String healthStatus;
     @Column(nullable = false, length = 24) private String operationStatus;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected Asset() {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Asset(String code, String name, String category, String location, String custodian,
                  BigDecimal originalValue, LocalDate commissionedOn, String healthStatus, String operationStatus) {
         this.assetCode = code; this.assetName = name; this.category = category; this.location = location;
@@ -27,9 +36,36 @@ public class Asset extends BaseEntity {
         this.healthStatus = healthStatus; this.operationStatus = operationStatus;
     }
 
-    public String getAssetCode(){return assetCode;} public String getAssetName(){return assetName;}
-    public String getCategory(){return category;} public String getLocation(){return location;}
-    public String getCustodian(){return custodian;} public BigDecimal getOriginalValue(){return originalValue;}
-    public LocalDate getCommissionedOn(){return commissionedOn;} public String getHealthStatus(){return healthStatus;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getAssetCode(){return assetCode;} /**
+                                                     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                     */
+public String getAssetName(){return assetName;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getCategory(){return category;} /**
+                                                   * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                   */
+public String getLocation(){return location;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getCustodian(){return custodian;} /**
+                                                     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                     */
+public BigDecimal getOriginalValue(){return originalValue;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public LocalDate getCommissionedOn(){return commissionedOn;} /**
+                                                                  * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                  */
+public String getHealthStatus(){return healthStatus;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public String getOperationStatus(){return operationStatus;}
 }

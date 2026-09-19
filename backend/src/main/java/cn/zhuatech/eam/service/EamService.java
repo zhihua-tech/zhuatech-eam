@@ -1,16 +1,49 @@
 /* Copyright 2026 Shanghai Rujing Zhihua Information Technology Co., Ltd. · https://www.zhuatech.cn/ */
 package cn.zhuatech.eam.service;
 import cn.zhuatech.eam.common.BusinessException; import cn.zhuatech.eam.dto.EamDto.*; import cn.zhuatech.eam.model.*; import cn.zhuatech.eam.repository.*; import org.springframework.stereotype.Service; import org.springframework.transaction.annotation.Transactional; import java.time.*; import java.time.format.DateTimeFormatter; import java.util.List;
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service @Transactional(readOnly=true) public class EamService {
     private final AssetRepository assets; private final SparePartRepository spareParts; private final MaintenancePlanRepository plans; private final WorkOrderRepository workOrders; private final InspectionRecordRepository inspections;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public EamService(AssetRepository assets,SparePartRepository spareParts,MaintenancePlanRepository plans,WorkOrderRepository workOrders,InspectionRecordRepository inspections){this.assets=assets;this.spareParts=spareParts;this.plans=plans;this.workOrders=workOrders;this.inspections=inspections;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Dashboard dashboard(){return new Dashboard(assets.count(),assets.countByHealthStatus("需关注"),workOrders.countByStatusNot("已完成"),workOrders.countByPriorityAndStatusNot("特急","已完成"),plans.countByNextExecutionDateLessThanEqual(LocalDate.now().plusDays(7)),inspections.countByResult("异常"),assets.findAllByOrderByAssetCodeAsc().stream().limit(5).map(AssetView::from).toList(),workOrders.findAllByOrderByDueAtAsc().stream().filter(w->!"已完成".equals(w.getStatus())).limit(5).map(WorkOrderView::from).toList(),plans.findAllByOrderByNextExecutionDateAsc().stream().limit(5).map(PlanView::from).toList());}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<AssetView> assets(){return assets.findAllByOrderByAssetCodeAsc().stream().map(AssetView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<SparePartView> spareParts(){return spareParts.findAllByOrderByPartCodeAsc().stream().map(SparePartView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<PlanView> plans(){return plans.findAllByOrderByNextExecutionDateAsc().stream().map(PlanView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<WorkOrderView> workOrders(){return workOrders.findAllByOrderByDueAtAsc().stream().map(WorkOrderView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public List<InspectionView> inspections(){return inspections.findAllByOrderByInspectedAtDesc().stream().map(InspectionView::from).toList();}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public AssetView createAsset(CreateAssetRequest r){if(assets.findByAssetCode(r.assetCode()).isPresent())throw new BusinessException("资产编码已存在");return AssetView.from(assets.save(new Asset(r.assetCode(),r.assetName(),r.category(),r.location(),r.custodian(),r.originalValue(),r.commissionedOn(),"健康","运行中")));}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public WorkOrderView createWorkOrder(CreateWorkOrderRequest r){if(assets.findByAssetCode(r.assetCode()).isEmpty())throw new BusinessException("关联资产不存在");String no="WO-"+LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));return WorkOrderView.from(workOrders.save(new WorkOrder(no,r.assetCode(),r.title(),r.orderType(),r.priority(),r.assignee(),r.dueAt(),"待接单")));}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Transactional public WorkOrderView advanceWorkOrder(Long id){var order=workOrders.findById(id).orElseThrow(()->new BusinessException("维修工单不存在"));if("已完成".equals(order.getStatus()))throw new BusinessException("维修工单已完成");order.advance();return WorkOrderView.from(order);}
 }
