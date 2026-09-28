@@ -2,6 +2,8 @@
 
 # ZhuaTech EAM · 知华科技企业资产管理系统
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业级增强：关键设备作业许可治理
 
 新增上锁挂牌、能源隔离、人员资质、批准版指导书、安全许可、备件、停机窗口和紧急作业联合门禁，详见 [关键设备作业许可](docs/ENTERPRISE_CRITICAL_WORK_PERMIT.md)。
